@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Project Management System</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" id="loginLink">Login</a></li>
+                    <li><a href="#" id="adminLink" class="hidden">Admin Console</a></li>
+                    <li><a href="#" id="researcherLink" class="hidden">Researcher Console</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Login Section -->
+        <div id="login" class="section active">
+            <h2>Login</h2>
+            <form id="loginForm" class="form-style">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+        </div>
+
+        <!-- Admin Console -->
+        <div id="adminConsole" class="section hidden">
+            <h2>Admin Console</h2>
+            <form id="projectForm" class="form-style">
+                <label for="projectTitle">Project Title:</label>
+                <input type="text" id="projectTitle" placeholder="Enter project title" required>
+                <label for="principalAgency">Principal Implementing Agency:</label>
+                <input type="text" id="principalAgency" placeholder="Agency Name" required>
+                <label for="projectCode">Project Code:</label>
+                <input type="text" id="projectCode" placeholder="Unique Code" required readonly>
+                <label for="status">Project Status:</label>
+                <select id="status" required>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button type="submit" class="btn-primary">Create Project</button>
+            </form>
+
+            <!-- Project List -->
+            <div id="projectList" class="list-style">
+                <h3>Project List</h3>
+                <input type="text" id="searchProjects" placeholder="Search projects...">
+                <ul id="projects"></ul>
+            </div>
+
+            <!-- Fund Utilization Reports -->
+            <div id="fundReports" class="list-style">
+                <h3>Fund Utilization Reports</h3>
+                <ul id="funds"></ul>
+            </div>
+        </div>
+
+        <!-- Researcher Console -->
+        <div id="researcherConsole" class="section hidden">
+            <h2>Researcher Console</h2>
+            <form id="updateForm" class="form-style">
+                <label for="progress">Project Progress:</label>
+                <textarea id="progress" placeholder="Describe your progress" required></textarea>
+                <label for="fundUtilization">Fund Utilization:</label>
+                <input type="text" id="fundUtilization" placeholder="Utilized Amount" required>
+                <label for="fileUpload">Upload Progress Report:</label>
+                <input type="file" id="fileUpload" required>
+                <button type="submit" class="btn-primary">Submit Progress</button>
+            </form>
+
+            <!-- Project Timeline -->
+            <div id="timeline" class="list-style">
+                <h3>Project Timeline</h3>
+                <ul id="timelineList"></ul>
+            </div>
+
+            <!-- Messages -->
+            <div id="messageSection" class="list-style">
+                <h3>Messages</h3>
+                <ul id="messages"></ul>
+                <form id="messageForm" class="form-style">
+                    <label for="message">New Message:</label>
+                    <textarea id="message" placeholder="Enter your message" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Project Management App - All Rights Reserved</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
